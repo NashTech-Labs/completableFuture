@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cassandra-config" />
+        <module name="future-demo" />
+        <module name="hello-api" />
+        <module name="hello-impl" />
+        <module name="integration-test" />
+        <module name="stream-api" />
+        <module name="stream-impl" />
+        <module name="streams-examples" />
+        <module name="user-api" />
+        <module name="user-api2" />
+        <module name="user-api2-impl" />
+        <module name="user-external" />
+        <module name="user-impl" />
+        <module name="welcome-api" />
+        <module name="welcome-impl" />
+        <module name="world-api" />
+        <module name="world-impl" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cassandra-config" target="1.8" />
+      <module name="completable-future" target="1.8" />
+      <module name="completable-future-example" target="1.8" />
+      <module name="completable-future-examples" target="1.8" />
+      <module name="future-demo" target="1.8" />
+      <module name="hello-api" target="1.8" />
+      <module name="hello-impl" target="1.8" />
+      <module name="integration-test" target="1.8" />
+      <module name="my-first-program" target="1.8" />
+      <module name="stream-api" target="1.5" />
+      <module name="stream-impl" target="1.5" />
+      <module name="streams" target="1.8" />
+      <module name="streams-example" target="1.8" />
+      <module name="streams-examples" target="1.8" />
+      <module name="trial" target="1.8" />
+      <module name="user-api" target="1.8" />
+      <module name="user-api2" target="1.8" />
+      <module name="user-api2-impl" target="1.8" />
+      <module name="user-external" target="1.8" />
+      <module name="user-impl" target="1.8" />
+      <module name="welcome-api" target="1.8" />
+      <module name="welcome-impl" target="1.8" />
+      <module name="world-api" target="1.8" />
+      <module name="world-impl" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

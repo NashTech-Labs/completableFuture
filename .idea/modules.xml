@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cassandra-config/cassandra-config.iml" filepath="$PROJECT_DIR$/cassandra-config/cassandra-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/completable-future.iml" filepath="$PROJECT_DIR$/completable-future.iml" />
+      <module fileurl="file://$PROJECT_DIR$/completable-future-examples/completable-future-examples.iml" filepath="$PROJECT_DIR$/completable-future-examples/completable-future-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/future-demo/future-demo.iml" filepath="$PROJECT_DIR$/future-demo/future-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello-impl/hello-impl.iml" filepath="$PROJECT_DIR$/hello-impl/hello-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/integration-tests/integration-test.iml" filepath="$PROJECT_DIR$/integration-tests/integration-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stream-api/stream-api.iml" filepath="$PROJECT_DIR$/stream-api/stream-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stream-impl/stream-impl.iml" filepath="$PROJECT_DIR$/stream-impl/stream-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trial/trial.iml" filepath="$PROJECT_DIR$/trial/trial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-api/user-api.iml" filepath="$PROJECT_DIR$/user-api/user-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trial/user-api2/user-api2.iml" filepath="$PROJECT_DIR$/trial/user-api2/user-api2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trial/user-api2-impl/user-api2-impl.iml" filepath="$PROJECT_DIR$/trial/user-api2-impl/user-api2-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-external/user-external.iml" filepath="$PROJECT_DIR$/user-external/user-external.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-impl/user-impl.iml" filepath="$PROJECT_DIR$/user-impl/user-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/welcome-api/welcome-api.iml" filepath="$PROJECT_DIR$/welcome-api/welcome-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/welcome-impl/welcome-impl.iml" filepath="$PROJECT_DIR$/welcome-impl/welcome-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/world-api/world-api.iml" filepath="$PROJECT_DIR$/world-api/world-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/world-impl/world-impl.iml" filepath="$PROJECT_DIR$/world-impl/world-impl.iml" />
+    </modules>
+  </component>
+</project>
