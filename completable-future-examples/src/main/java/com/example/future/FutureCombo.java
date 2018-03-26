@@ -9,13 +9,15 @@ import java.util.stream.Stream;
 public class FutureCombo {
 
     public static void main(String[] args) throws Exception {
-        //thenApply();
-        //thenCompose();
-        //thenAcceptBoth();
-        //thenCombine();
-        //allOf();
-        //anyOf();
+        thenApply();
+        thenCompose();
+        thenAcceptBoth();
+        thenCombine();
+        allOf();
+        anyOf();
+        chainOfThenApply();
         exception();
+        exceptionUsingHandle();
         Thread.sleep(3000);
     }
 
@@ -28,22 +30,19 @@ public class FutureCombo {
     }
 
     private static void thenCompose() {
-
         CompletableFuture<String> completableFuture =
                 CompletableFuture.supplyAsync(() -> "Hello")
                         .thenCompose(value ->
                                 CompletableFuture.supplyAsync(
                                         () -> value + " Knolders! Its thenCompose"));
-
-        completableFuture.thenAccept(System.out::println);
+        completableFuture.thenAccept(System.out::println); // Hello Knolders! Its thenCompose
     }
 
 
     private static void thenAcceptBoth() {
         CompletableFuture<Void> completableFuture = CompletableFuture.supplyAsync(() -> "Hello")
                 .thenAcceptBoth(CompletableFuture.supplyAsync(() -> " Knolders! Its thenAcceptBoth"),
-                        (value1, value2) -> System.out.println(value1 + value2));
-
+                        (value1, value2) -> System.out.println(value1 + value2)); // Hello Knolders! Its thenAcceptBoth
     }
 
     private static void thenCombine() {
@@ -51,7 +50,7 @@ public class FutureCombo {
                 = CompletableFuture.supplyAsync(() -> "Hello")
                 .thenCombine(CompletableFuture.supplyAsync(
                         () -> " Knolders! Its thenCombine"), (value1, value2) -> value1 + value2);
-        completableFuture.thenAccept(System.out::println);
+        completableFuture.thenAccept(System.out::println); // Hello Knolders! Its thenCombine
     }
 
     private static void allOf() {
@@ -72,7 +71,7 @@ public class FutureCombo {
         String combined = Stream.of(completableFuture1, completableFuture2, completableFuture3)
                 .map(CompletableFuture::join)
                 .collect(Collectors.joining(" "));
-        System.out.println(combined);
+        System.out.println(combined); // Hello Knolders! Its allOf
     }
 
     private static void anyOf() throws Exception {
@@ -101,17 +100,16 @@ public class FutureCombo {
             return "Result of Future 3";
         });
         CompletableFuture<Object> anyOfFuture = CompletableFuture.anyOf(future1, future2, future3);
-        anyOfFuture.thenAccept(System.out::println);
+        anyOfFuture.thenAccept(System.out::println); // Result of Future 2
     }
 
     private static void exception() {
         Integer age = -1;
-
         CompletableFuture<String> exceptionFuture = CompletableFuture.supplyAsync(() -> {
-            if(age < 0) {
+            if (age < 0) {
                 throw new IllegalArgumentException("Age can not be negative");
             }
-            if(age > 18) {
+            if (age > 18) {
                 return "Adult";
             } else {
                 return "Child";
@@ -120,6 +118,38 @@ public class FutureCombo {
             System.out.println("Oops! We have an exception - " + ex.getMessage());
             return "Unknown!";
         });
-        exceptionFuture.thenAccept(System.out::println);
+        exceptionFuture.thenAccept(System.out::println); //Unknown!
+    }
+
+    private static void exceptionUsingHandle() {
+        Integer age = -1;
+        CompletableFuture<String> exceptionFuture = CompletableFuture.supplyAsync(() -> {
+            if (age < 0) {
+                throw new IllegalArgumentException("Age can not be negative");
+            }
+            if (age > 18) {
+                return "Adult";
+            } else {
+                return "Child";
+            }
+        }).handle((result, ex) -> {
+            if (ex != null) {
+                System.out.println("Oops! We have an exception - " + ex.getMessage());
+                return "Unknown!";
+            }
+            return result;
+        });
+        exceptionFuture.thenAccept(System.out::println); // Unknown!
+    }
+
+    private static void chainOfThenApply() {
+        CompletableFuture.supplyAsync(() -> {
+            // Code which might throw an exception
+            return "Some result";
+        }).thenApply(result -> "processed result")
+          .thenApply(result -> "result after further processing")
+          .thenAccept(result -> {
+            // do something with the final result
+        });
     }
 }

@@ -8,11 +8,11 @@ public class CallableMethod {
 
     public static void main(String[] args) throws Exception {
         runAsync();
-        //supplyAsync();
-        //thenAccept();
-        //thenApply();
-        //chainOfCallbacks();
-        //thenRun();
+        supplyAsync();
+        thenAccept();
+        thenApply();
+        chainOfCallbacks();
+        thenRun();
 
         Thread.sleep(10000);
     }
